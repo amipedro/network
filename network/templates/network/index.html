@@ -1,6 +1,23 @@
 {% extends "network/layout.html" %}
-
 {% block body %}
 <div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
+
+<script type="text/babel" data-type="module">
+  require('./GlobalStyle.js');
+
+  //import GlobalStyle from ".styles";
+  import { GlobalStyle } from './styles/GlobalStyle';
+  // import GlobalStyle from './GlobalStyle';
+
+  function App() {
+
+    return (
+      <React.Fragment>
+        <h1>Woof</h1>
+        <p>Test</p>
+      </React.Fragment >
+    );
+  }
+  ReactDOM.render(<App />, document.querySelector("#root"));
+</script>
 {% endblock %}
